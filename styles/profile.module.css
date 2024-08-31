@@ -1,128 +1,146 @@
-.outerContainer {
+.pageContainer {
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #4f2100, #000000);
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  height: 100vh;
-  background: linear-gradient(to bottom, #3b250e, #262525); /* Vertical gradient from orange to black */
-  border: 2px black;
-  border-radius: 10px;
+  justify-content: flex-start;
+  font-family: 'JetBrains Mono', monospace;
+  padding-top: 30px; /* Adjust this value to decrease the top padding */
 }
 
-.header {
+.heading {
+  margin-bottom: 20px;
+  font-size: 43px;
   display: flex;
   justify-content: center;
-  align-items: center;
-  margin-bottom: -10px;
-}
-
-.supr, .human {
-  font-size: 52px;
-  font-weight: bold;
-  margin-bottom: 60px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 900;
   font-style: italic;
-  margin-top: 60px;
+  margin-top: -3px;
 }
 
 .supr {
-  color: white;
+  color: #FFFFFF;
 }
 
 .human {
-  color: #ff8c00;
+  color: #FF7500;
 }
 
-.innerContainer {
-  background: black;
-  padding: 10px;
-  border-radius: 12px;
-  box-shadow: 0 0 200px rgb(231, 127, 48); /* Glowing effect */
-  width: 320px;
-}
-
-.card {
-  background-color: #000;
+.formContainer {
+  background-color: #000000;
   padding: 20px;
-  border-radius: 10px;
-  border: 2px solid #ff8c00; /* Orange border */
-}
-
-.form {
-  display: flex;
-  flex-direction: column;
+  border-radius: 7px;
+  box-shadow: 0 0 20px #61440efc;
+  border: 2.3px solid #FF7500;
+  width: 68%;
+  max-width: 400px;
+  margin-bottom: 20px; /* Adds space between the form container and the button */
+  height: 400px;
+  margin-top: 20px;
 }
 
 .label {
-  color: #ddd;
-  font-size: 12px;
-  margin-bottom: 8px;
-}
-
-.input {
-  background-color: black;
-  color: #ff8c00;
-  border: 2px solid #ff8c00;
-  border-radius: 4px;
-  padding: 10px;
-  margin-bottom: 20px;
-  font-size: 14px;
-  cursor: pointer;
-}
-
-.dropdownContainer {
-  position: relative;
-  margin-bottom: 20px;
-}
-
-.optionsContainer {
-  background-color: black;
-  border: 2px solid #ff8c00;
-  border-radius: 4px;
-  margin-top: 8px;
-  position: absolute;
-  width: 100%;
-  z-index: 10;
-}
-
-.option {
-  color: #ff8c00;
-  padding: 10px;
-  cursor: pointer;
-}
-
-.option:hover {
-  background-color: #333;
-}
-
-.disclaimer {
-  color: white;
+  color: #FFFFFF;
   font-size: 10px;
-  margin-bottom: 20px;
-  text-align: left; /* Align text to the left */
+  margin-bottom: 5px;
+  display: block;
 }
 
-.disclaimerTitle {
-  display: block; /* Make title a block element so content is below */
-  color: #ff8c00;
-  font-weight: bold;
-}
-
-.button {
-  background-color: #ff8c00;
-  color: black;
-  border: none;
-  border-radius: 4px;
+.inputField, .selectField {
+  width: 87.2%;
   padding: 10px;
-  font-size: 14px;
-  cursor: pointer;
-  width: 40%;
-  font-weight: bold;
-  text-shadow: 0 0 10px rgba(255, 140, 0, 0.827);
-  margin-top: 20px;
-  box-shadow: 0 0 60px rgba(255, 68, 0, 0.622);
+  margin-bottom: 15px;
+  border: 2.7px solid #FF7500;
+  background-color: #000000;
+  color: #FF7500;
+  border-radius: 5px;
+  font-size: 10px;
 }
 
-.button:hover {
-  background-color: #e65100;
+/* Placeholder color for input fields */
+.inputField::placeholder {
+  color: #FF7500; /* Orange color for placeholders */
+}
+
+/* Select Field Styling */
+.selectField {
+  width: 96%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 2.7px solid #FF7500;
+  background-color: #000000;
+  color: #FF7500;
+  border-radius: 5px;
+  font-size: 12px;
+  appearance: none; /* Removes the default arrow */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  position: relative;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23ff7800d9"><path d="M7 10l5 5 5-5z"/></svg>'); /* Custom arrow */
+  background-repeat: no-repeat;
+  background-position: calc(100% - 10px) center; /* Adjusts arrow position */
+  background-size: 24px; /* Makes the arrow bigger */
+}
+
+/* Dropdown list styling */
+.selectField option {
+  background-color: #ff7800d9; /* Background color for dropdown options */
+  color: #000000; /* Font color for dropdown options */
+  font-weight: 700; /* Makes the font bolder */
+  border: none; 
+  border-bottom: 1px solid #000000; /* Adds a thin black line between options */
+  padding: 8px 10px; /* Adds padding for spacing */
+}
+
+
+.selectField option:checked {
+  background-color: #000000;
+  color: #ff7800d9;
+}
+
+/* Disclaimer styling */
+.disclaimer {
+  color: #FFFFFF;
+  font-size: 10px;
+  font-weight: 400;
+  margin-bottom: 20px;
+  margin-top: 30px;
+  font-family: 'JetBrains Mono', monospace;
+  text-align: center; /* Centers the disclaimer text */
+}
+
+.disclaimer strong {
+  color: #FF7500; /* Orange color for disclaimer heading */
+  display: block; /* Forces the disclaimer heading onto its own line */
+  margin-bottom: 1px; /* Adds space between the heading and the content */
+}
+
+/* Updated Next Button */
+.nextButton {
+  width: 50%; /* Matches the width of the form container */
+  max-width: 400px;
+  padding: 15px;
+  background-color: #FF7500;
+  color: #000000;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 10px #61440efc;
+  cursor: pointer;
+  margin-top: 30px;
+  position: relative; /* Allows positioning of the arrow */
+}
+
+.nextButton .arrow {
+  position: absolute;
+  right: 10px;
+  width: 17px; /* Adjust size as needed */
+  height: auto; /* Maintain aspect ratio */
 }

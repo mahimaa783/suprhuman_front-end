@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import styles from '../styles/profile.module.css';
+import styles from '../styles/settings.module.css'; // Using a different CSS file
 
-export default function Home() {
+export default function Settings() {
   const [name, setName] = useState('');
   const [gender, setGender] = useState('');
   const [country, setCountry] = useState('');
@@ -9,12 +9,9 @@ export default function Home() {
 
   return (
     <div className={styles.pageContainer}>
-      <h1 className={styles.heading}>
-        <span className={styles.supr}>SUPR</span><span className={styles.human}>HUMAN</span>
-      </h1>
       <div className={styles.formContainer}>
         <form>
-          <label htmlFor="name" className={styles.label}>ENTER NAME</label>
+          <label htmlFor="name" className={styles.label}>NAME</label>
           <input
             type="text"
             id="name"
@@ -24,31 +21,31 @@ export default function Home() {
             className={styles.inputField}
           />
 
-          <label htmlFor="gender" className={styles.label}>SELECT GENDER</label>
+          <label htmlFor="gender" className={styles.label}>GENDER</label>
           <select
             id="gender"
             value={gender}
             onChange={(e) => setGender(e.target.value)}
             className={styles.selectField}
           >
-            <option value="" disabled hidden>SELECT</option>
+            <option value="" disabled hidden>SELECTION</option>
             <option value="male">Male</option>
             <option value="female">Female</option>
             <option value="other">Other</option>
           </select>
 
-          <label htmlFor="country" className={styles.label}>SELECT COUNTRY</label>
+          <label htmlFor="country" className={styles.label}>COUNTRY</label>
           <select
             id="country"
             value={country}
             onChange={(e) => setCountry(e.target.value)}
             className={styles.selectField}
           >
-            <option value="" disabled hidden>SELECT</option>
+            <option value="" disabled hidden>SELECTION</option>
             {/* Add country options here */}
           </select>
 
-          <label htmlFor="email" className={styles.label}>ENTER EMAIL</label>
+          <label htmlFor="email" className={styles.label}>EMAIL</label>
           <input
             type="email"
             id="email"
@@ -58,15 +55,15 @@ export default function Home() {
             className={styles.inputField}
           />
 
-          <div className={styles.disclaimer}>
-            <strong>DISCLAIMER:</strong> EMAIL PROVIDED NOW CANNOT BE <br />CHANGED IN THE FUTURE FOR AIRDROPS.
-          </div>
+          {/* Buttons inside form container */}
+          <button type="button" className={styles.actionButton}>
+            CONNECT WALLET
+          </button>
+          <button type="button" className={styles.actionButton}>
+            CHANGE CHARACTER
+          </button>
         </form>
       </div>
-      <button type="button" className={styles.nextButton} onClick={() => window.location.href = '/chooseCharacter'}>
-         NEXT <img src="/arrow-black.png" alt="Arrow" className={styles.arrow} />
-      </button>
-
     </div>
   );
 }

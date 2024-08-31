@@ -1,0 +1,65 @@
+/* subscribe.module.css */
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'JetBrains Mono', monospace;
+    background-color: rgb(20, 19, 19);
+  }
+  
+  .subscribeBox {
+    position: relative;
+    background-color: black;
+    border: 2px solid #FF7500; /* Orange border */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px #FF7500; /* Orange shadow */
+    width: 300px;
+    text-align: center;
+    height: 300px;
+  }
+  
+  .closeButton {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    color: #FF7500; /* Orange color */
+    font-size: 20px;
+    cursor: pointer;
+  }
+  
+  .youtubeIcon {
+    width: 60px;
+    margin: 20px auto;
+  }
+  
+  .text {
+    color: white; /* Replace 'YourSecondaryFont' with the actual font name */
+    margin: 20px 0;
+    font-size: 16px;
+    line-height: 20px;
+    font-family: 'JetBrains Mono', monospace;
+  }
+  
+  .checkButton {
+    background-color: #FF7500; /* Orange color */
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+    width: 250px;
+    margin-top: 30px;
+    box-shadow: 0 0 3px #FF7500;
+  }
+  
+  .checkButton:hover {
+    background-color: #e06600; /* Slightly darker orange on hover */
+  }
+  

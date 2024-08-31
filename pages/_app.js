@@ -1,5 +1,23 @@
-import "@/styles/profile.module.css";
+import '../styles/globals.css';
+import { JetBrains_Mono, Poppins } from 'next/font/google';
 
-export default function App({ Component, pageProps }) {
-  return <Component {...pageProps} />;
+const jetBrainsMono = JetBrains_Mono({
+  subsets: ['latin'],
+  variable: '--font-primary',
+});
+
+const poppins = Poppins({
+  subsets: ['latin'],
+  weight: ['500', '600', '700'],
+  variable: '--font-secondary',
+});
+
+function MyApp({ Component, pageProps }) {
+  return (
+    <main className={`${jetBrainsMono.variable} ${poppins.variable}`}>
+      <Component {...pageProps} />
+    </main>
+  );
 }
+
+export default MyApp;

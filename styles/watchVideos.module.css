@@ -1,0 +1,69 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 103vh;
+    background-color: rgb(26, 25, 25);
+  }
+  
+  .youtubeBox {
+    position: relative;
+    background-color: black;
+    border: 2px solid  #FF7500;
+    padding: 20px;
+    border-radius: 7px;
+    box-shadow: 0 0 5px  #FF7500;
+    width: 300px;
+    text-align: center;
+    height: 450px;
+  }
+  
+  .closeButton {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    color: #FF7500;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  
+  .youtubeIcon {
+    width: 70px;
+    margin: 20px auto;
+  }
+  
+  .videoContainer {
+    border: 2px solid #FF7500;
+    margin-top: 5px;
+    margin-bottom: 50px;
+    height: 200px;
+    width: 300px;
+    border-radius: 2px;
+  }
+  
+  .video {
+    width: 100%;
+    height: 200px;
+  }
+  
+  .checkButton {
+    background-color:  #FF7500;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+    width: 250px;
+    box-shadow: 0 0 5px  #FF7500;
+    font-family: 'JetBrains Mono', monospace;
+    font-weight:bolder;
+  }
+  
+  .checkButton:hover {
+    background-color: #FF7500;
+  }
+  
