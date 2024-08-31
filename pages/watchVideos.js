@@ -1,24 +1,22 @@
 // youtube.js
 import React from 'react';
-import styles from '../styles/watchVideos.module.css';
+import styles from '../styles/watchVideos.module.css'; // Reuse styles for consistency
 
-const YoutubePage = () => {
+const YoutubePage = ({ onClose }) => {
   return (
-    <div className={styles.container}>
+    <div className={styles.overlay}>  {/* Add overlay styling to make it a pop-up */}
       <div className={styles.youtubeBox}>
         {/* Close Button */}
-        <button className={styles.closeButton}>X</button>
+        <button className={styles.closeButton} onClick={onClose}>X</button>
         
         {/* YouTube Icon */}
         <img src="/youtube.png" alt="YouTube" className={styles.youtubeIcon} />
 
         {/* YouTube Video */}
         <div className={styles.videoContainer}>
-          {/* Replace 'videoId' with the actual video ID or link from your database */}
+          {/* Replace 'YOUR_VIDEO_ID' with the actual video ID from your database */}
           <iframe
             className={styles.video}
-
-            //give the link of the video here
             src={`https://www.youtube.com/embed/YOUR_VIDEO_ID`}
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

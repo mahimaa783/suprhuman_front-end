@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from '../styles/coins-per-tap.module.css';
 
-const UpgradePage = () => {
+const UpgradePage = ({ onClose }) => {
   const handleUpgradeClick = () => {
     // Logic for upgrading, e.g., deducting currency, etc.
     console.log('Upgrade clicked');
@@ -11,7 +11,7 @@ const UpgradePage = () => {
     <div className={styles.container}>
       <div className={styles.upgradeBox}>
         {/* Close Button */}
-        <button className={styles.closeButton}>X</button>
+        <button className={styles.closeButton} onClick={onClose}>X</button>
 
         {/* Level Display */}
         <p className={styles.levelText}>LEVEL 2</p>

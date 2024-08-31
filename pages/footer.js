@@ -1,17 +1,36 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 const Footer = () => {
-  const [active, setActive] = useState(''); // State to manage which icon is active
+  const router = useRouter();
+  const currentPath = router.pathname;
 
-  // Function to handle click and set the active icon
+  const [active, setActive] = useState(() => {
+    if (currentPath === '/home') return 'home';
+    if (currentPath === '/friends') return 'friends';
+    if (currentPath === '/upgrade') return 'upgrade';
+    if (currentPath === '/earn') return 'earn';
+    if (currentPath === '/stats') return 'stats';
+    return '';
+  });
+
+  // Update active state when the route changes
+  useEffect(() => {
+    if (currentPath === '/home') setActive('home');
+    if (currentPath === '/friends') setActive('friends');
+    if (currentPath === '/upgrade') setActive('upgrade');
+    if (currentPath === '/earn') setActive('earn');
+    if (currentPath === '/stats') setActive('stats');
+  }, [currentPath]);
+
   const handleClick = (icon) => {
     setActive(icon);
+    router.push(`/${icon}`);
   };
 
   return (
     <footer style={footerStyle}>
-      
       {/* First Icon Container: Friends and Upgrades */}
       <div style={iconGroupStyle}>
         <Link href="/friends" passHref>

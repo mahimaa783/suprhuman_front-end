@@ -16,8 +16,8 @@
     background-color: #000000;
     padding: 20px;
     border-radius: 12px;
-    box-shadow: 0 0 6px #ff7800d9;
-    border: 3.1px solid #ff7800d9;
+    box-shadow: 0 0 6px #FF7500;
+    border: 3.1px solid #FF7500;
     width: 68%;
     max-width: 400px;
     margin-top: 40px; /* Extra space at the top */
@@ -35,16 +35,16 @@
     width: 90.1%;
     padding: 10px;
     margin-bottom: 15px;
-    border: 3.1px solid #ff7800d9;
+    border: 3.1px solid #FF7500;
     background-color: #000000;
-    color: #ff7800d9;
+    color: #FF7500;
     border-radius: 5px;
     font-size: 10px;
   }
   
   /* Placeholder color for input fields */
   .inputField::placeholder, .selectField::placeholder {
-    color: #ff7800d9;
+    color: #FF7500;
   }
   
   /* Select Field Styling */
@@ -52,9 +52,9 @@
     width: 99%;
     padding: 10px;
     margin-bottom: 15px;
-    border: 3.1px solid #ff7800d9;
+    border: 3.1px solid #FF7500;
     background-color: #000000;
-    color: #ff7800d9;
+    color: #FF7500;
     border-radius: 5px;
     font-size: 12px;
     appearance: none;
@@ -69,7 +69,7 @@
   
   /* Dropdown list styling */
   .selectField option {
-    background-color: #ff7800d9;
+    background-color: #FF7500;
     color: #000000;
     font-weight: 700;
     border: none;
@@ -80,7 +80,7 @@
   /* Keeps the input field background color the same after selection */
   .selectField option:checked {
     background-color: #000000;
-    color: #ff7800d9;
+    color: #FF7500;
   }
   
   /* Button Styling */
@@ -88,7 +88,7 @@
     width: 100%; /* Full width of the form container */
     padding: 12px;
     margin-bottom: 15px;
-    background-color: #ff7800d9;
+    background-color: #FF7500;
     color: #000000;
     border: none;
     border-radius: 5px;
@@ -97,7 +97,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 0 2px #ff7800d9;
+    box-shadow: 0 0 2px #FF7500;
     cursor: pointer;
   }
   
@@ -106,6 +106,6 @@
   }
   
   .actionButton:hover {
-    background-color: #ff8c33; /* Slightly lighter orange on hover */
+    background-color: #FF7500; /* Slightly lighter orange on hover */
   }
   

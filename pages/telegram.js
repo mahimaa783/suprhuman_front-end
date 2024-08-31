@@ -2,17 +2,16 @@
 import React from 'react';
 import styles from '../styles/telegram.module.css';
 
-const TelegramPage = () => {
+const TelegramPage = ({ onClose }) => {
   const handleButtonClick = () => {
-    // Redirect the user to the desired link
     window.location.href = 'https://t.me/your_channel'; // Replace with your actual Telegram channel URL
   };
 
   return (
-    <div className={styles.container}>
+    <div className={styles.overlay}>
       <div className={styles.subscribeBox}>
         {/* Close Button */}
-        <button className={styles.closeButton}>X</button>
+        <button className={styles.closeButton} onClick={onClose}>X</button>
 
         {/* Telegram Icon */}
         <img src="/telegram.png" alt="Telegram" className={styles.telegramIcon} />

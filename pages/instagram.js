@@ -2,17 +2,16 @@
 import React from 'react';
 import styles from '../styles/instagram.module.css';
 
-const InstagramPage = () => {
+const InstagramPage = ({ onClose }) => {
   const handleButtonClick = () => {
-    // Redirect the user to the desired link
     window.location.href = 'https://www.instagram.com/your_profile'; // Replace with your actual Instagram profile URL
   };
 
   return (
-    <div className={styles.container}>
+    <div className={styles.overlay}>
       <div className={styles.subscribeBox}>
         {/* Close Button */}
-        <button className={styles.closeButton}>X</button>
+        <button className={styles.closeButton} onClick={onClose}>X</button>
 
         {/* Instagram Icon */}
         <img src="/instagram.png" alt="Instagram" className={styles.instagramIcon} />

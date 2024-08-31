@@ -1,9 +1,8 @@
 import React from 'react';
 import styles from '../styles/recharge-energy.module.css';
 
-const RechargeEnergy = () => {
+const RechargeEnergy = ({ onClose }) => {
   const handleUseClick = () => {
-    // Logic for using energy or any other action
     console.log('Use button clicked');
   };
 
@@ -11,7 +10,7 @@ const RechargeEnergy = () => {
     <div className={styles.container}>
       <div className={styles.energyBox}>
         {/* Close Button */}
-        <button className={styles.closeButton}>X</button>
+        <button className={styles.closeButton} onClick={onClose}>X</button>
 
         {/* Title */}
         <p className={styles.title}>RECHARGE ENERGY</p>

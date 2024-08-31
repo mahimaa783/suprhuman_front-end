@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from '../styles/boost-coin-per-tap.module.css';
 
-const BoostCoinPerTap = () => {
+const BoostCoinPerTap = ({onClose}) => {
   const handleUpgradeClick = () => {
     // Logic for upgrading or any other action
     console.log('Upgrade button clicked');
@@ -11,7 +11,7 @@ const BoostCoinPerTap = () => {
     <div className={styles.container}>
       <div className={styles.upgradeBox}>
         {/* Close Button */}
-        <button className={styles.closeButton}>X</button>
+        <button className={styles.closeButton} onClick={onClose}>X</button>
 
         {/* Title */}
         <p className={styles.title}>COIN PER TAP</p>

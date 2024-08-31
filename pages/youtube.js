@@ -1,18 +1,17 @@
-// subscribe.js
+// youtube.js
 import React from 'react';
 import styles from '../styles/youtube.module.css';
 
-const SubscribePage = () => {
+const SubscribePage = ({ onClose }) => {
   const handleButtonClick = () => {
-    // Redirect the user to the desired link
     window.location.href = 'https://www.example.com'; // Replace with your actual URL
   };
 
   return (
-    <div className={styles.container}>
+    <div className={styles.overlay}>
       <div className={styles.subscribeBox}>
         {/* Close Button */}
-        <button className={styles.closeButton}>X</button>
+        <button className={styles.closeButton} onClick={onClose}>X</button>
 
         {/* YouTube Icon */}
         <img src="/youtube.png" alt="YouTube" className={styles.youtubeIcon} />

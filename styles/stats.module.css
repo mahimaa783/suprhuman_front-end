@@ -32,7 +32,7 @@
 }
 
 .human {
-  color: #ff7b22;
+  color: #FF7500;
 }
 
 .settingsIcon {
@@ -69,10 +69,10 @@
 
 .statsBlock {
   background-color: #000000;
-  border: 3.1px solid #FF7500;
+  border: 1.7px solid #FF7500;
   padding: 13px;
   border-radius: 8px;
-  box-shadow: 0 0 20px #61440efc;
+  box-shadow: 0 0 12px #FF7500;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -94,7 +94,7 @@
   justify-content: center;
   width: 250px;
   margin-left: 50px;
-  box-shadow: 0 0 7px #61440efc;
+  box-shadow: 0 0 5px #FF7500;
 }
 
 .codeLabel {

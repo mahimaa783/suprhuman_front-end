@@ -1,9 +1,27 @@
+import React, { useState } from 'react';
 import styles from '../styles/boost.module.css';
 import Footer from './footer';
+import RechargeEnergy from './recharge-energy'; // Import the RechargeEnergy component
+import UpgradePage from './boost-coin-per-tap'; // Import the UpgradePage component
 import { useRouter } from 'next/router'; // Importing useRouter for navigation
 
 export default function Boost() {
   const router = useRouter(); // Initialize the router
+  const [isEnergyPopUpVisible, setIsEnergyPopUpVisible] = useState(false); // State to control pop-up visibility for energy
+  const [isUpgradePopUpVisible, setIsUpgradePopUpVisible] = useState(false); // State to control pop-up visibility for upgrade
+
+  const handleEnergyClick = () => {
+    setIsEnergyPopUpVisible(true); // Show the pop-up when "RECHARGE ENERGY" is clicked
+  };
+
+  const handleUpgradeClick = () => {
+    setIsUpgradePopUpVisible(true); // Show the pop-up when "LEVEL 1" is clicked
+  };
+
+  const handleClosePopUp = () => {
+    setIsEnergyPopUpVisible(false); // Hide the energy pop-up
+    setIsUpgradePopUpVisible(false); // Hide the upgrade pop-up
+  };
 
   return (
     <div className={styles.pageContainer}>
@@ -25,7 +43,8 @@ export default function Boost() {
           <img src="/boost-orange.png" alt="Boost Icon" />
         </div>
 
-        <div className={styles.boostBlockContainer}>
+        {/* Recharge Energy Section */}
+        <div className={styles.boostBlockContainer} onClick={handleEnergyClick}>
           <p className={styles.boostBlockLabel}>RECHARGE ENERGY</p>
           <div className={styles.boostBlock}>
             <img src="/recharge-energy.png" alt="Energy Icon" className={styles.blockIcon} />
@@ -34,7 +53,8 @@ export default function Boost() {
           </div>
         </div>
 
-        <div className={styles.boostBlockContainer}>
+        {/* Coin Per Tap Block */}
+        <div className={styles.boostBlockContainer} onClick={handleUpgradeClick}>
           <p className={styles.boostBlockLabel}>COIN PER TAP</p>
           <div className={styles.boostBlock}>
             <img src="/boost-coin-per-tap.png" alt="Coin Icon" className={styles.blockIcon2} />
@@ -43,6 +63,24 @@ export default function Boost() {
           </div>
         </div>
       </div>
+
+      {/* Pop-up for recharge energy */}
+      {isEnergyPopUpVisible && (
+        <div className={styles.energyPopUpOverlay}>
+          <div className={styles.energyBoxWrapper}>
+            <RechargeEnergy onClose={handleClosePopUp} /> {/* Pass the onClose prop */}
+          </div>
+        </div>
+      )}
+
+      {/* Pop-up for coin per tap upgrade */}
+      {isUpgradePopUpVisible && (
+        <div className={styles.energyPopUpOverlay}>
+          <div className={styles.energyBoxWrapper}>
+            <UpgradePage onClose={handleClosePopUp} /> {/* Pass the onClose prop */}
+          </div>
+        </div>
+      )}
 
       {/* Include Footer Component */}
       <Footer />

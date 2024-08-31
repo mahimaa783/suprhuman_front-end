@@ -2,17 +2,16 @@
 import React from 'react';
 import styles from '../styles/twitter.module.css';
 
-const TwitterPage = () => {
+const TwitterPage = ({ onClose }) => {
   const handleButtonClick = () => {
-    // Redirect the user to the desired link
     window.location.href = 'https://twitter.com/your_profile'; // Replace with your actual Twitter profile URL
   };
 
   return (
-    <div className={styles.container}>
+    <div className={styles.overlay}>
       <div className={styles.subscribeBox}>
         {/* Close Button */}
-        <button className={styles.closeButton}>X</button>
+        <button className={styles.closeButton} onClick={onClose}>X</button>
 
         {/* Twitter Icon */}
         <img src="/twitter.png" alt="Twitter" className={styles.twitterIcon} />
