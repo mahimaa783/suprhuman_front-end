@@ -1,13 +1,41 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import styles from '../styles/home.module.css';
 import Footer from './footer';
 
 export default function Home() {
   const [isSettingsOpen, setIsSettingsOpen] = useState(false);
+  const [coinPosition, setCoinPosition] = useState(null);
 
   const toggleSettingsModal = () => {
     setIsSettingsOpen(!isSettingsOpen);
   };
+
+  // Function to handle tap and show the coin image
+  const handlePageTap = (e) => {
+    const target = e.target;
+
+    // Check if the tap was on the avatar image or the brown background (non-interactive area)
+    const isOnAvatar = target.classList.contains(styles.characterImage);
+    const isOnBackground = target.classList.contains(styles.pageContainer);
+
+    if (isOnAvatar || isOnBackground) {
+      // Get the tap position relative to the viewport
+      const x = e.clientX;
+      const y = e.clientY;
+      setCoinPosition({ x, y });
+
+      // Hide the coin after 1 second
+      setTimeout(() => setCoinPosition(null), 1000);
+    }
+  };
+
+  // Add event listener for tap on component mount and remove on unmount
+  useEffect(() => {
+    window.addEventListener('click', handlePageTap);
+    return () => {
+      window.removeEventListener('click', handlePageTap);
+    };
+  }, []);
 
   return (
     <div className={styles.pageContainer}>
@@ -102,7 +130,7 @@ export default function Home() {
                   placeholder="NAME"
                   className={styles.inputField}
                 />
-
+                
                 <label htmlFor="gender" className={styles.label}>GENDER</label>
                 <select
                   id="gender"
@@ -141,6 +169,15 @@ export default function Home() {
             </div>
           </div>
         </div>
+      )}
+
+      {coinPosition && (
+        <img
+          src="/coins-per-min.png"
+          alt="Coin per Tap"
+          className={styles.coinPerTap}
+          style={{ top: coinPosition.y, left: coinPosition.x }}
+        />
       )}
     </div>
   );
