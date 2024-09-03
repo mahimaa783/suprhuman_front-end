@@ -108,7 +108,7 @@
 
 .taskLabel {
     color: #FF7500;
-    font-size: 11px;
+    font-size: 13px;
     margin-bottom: 11px;
     font-family: 'JetBrains Mono', monospace;
     text-align: left;
@@ -154,10 +154,10 @@
     transform: translate(-50%, -50%); /* Adjusts position to center */
     z-index: 1000; /* High z-index to appear above other elements */
     background-color: white;
-    padding: 20px;
+    padding: 10px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    width: 300px; /* Adjust as needed */
+    width: 250px; /* Adjust as needed */
     display: none; /* Initially hidden */
   }
   

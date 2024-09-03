@@ -2,11 +2,15 @@
     --font-primary: 'JetBrains Mono', monospace;
     --font-secondary: 'Poppins', sans-serif;
   }
-  
+  html {
+    scroll-behavior: smooth;
+  }
   body {
     font-family: var(--font-primary);
     margin: 0;
     padding: 0;
+    overflow: auto; /* Ensure scrolling is not prevented globally */
+  height: 100%; /* Ensure full height is allowed */
   }
   
   .secondaryText {

@@ -17,7 +17,7 @@ const SubscribePage = ({ onClose }) => {
         <img src="/youtube.png" alt="YouTube" className={styles.youtubeIcon} />
 
         {/* Text Content */}
-        <p className={styles.text}>SUBSCRIBE TO OUR YOUTUBE CHANNEL</p>
+        <p className={styles.text}>SUBSCRIBE TO OUR <br />YOUTUBE CHANNEL</p>
 
         {/* Check Button */}
         <button className={styles.checkButton} onClick={handleButtonClick}>

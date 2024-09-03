@@ -8,6 +8,8 @@
   justify-content: flex-start;
   font-family: 'JetBrains Mono';
   padding-bottom: 30px;
+  overflow: auto; 
+  height: auto;
 }
 
 .heading {

@@ -17,7 +17,7 @@ const TelegramPage = ({ onClose }) => {
         <img src="/telegram.png" alt="Telegram" className={styles.telegramIcon} />
 
         {/* Text Content */}
-        <p className={styles.text}>JOIN OUR TELEGRAM CHANNEL</p>
+        <p className={styles.text}>JOIN OUR <br />TELEGRAM CHANNEL</p>
 
         {/* Check Button */}
         <button className={styles.checkButton} onClick={handleButtonClick}>

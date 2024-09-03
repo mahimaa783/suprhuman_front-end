@@ -7,9 +7,9 @@ export default function Home() {
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
-    const duration = 5000; // Total duration in ms (5 seconds)
+    const duration = 6000; // Total duration in ms (5 seconds)
     const intervalDuration = 100; // Interval duration in ms
-    const increment = (100 / (duration / intervalDuration)); // Progress increment per interval
+    const increment = (200 / (duration / intervalDuration)); // Progress increment per interval
 
     const interval = setInterval(() => {
       setProgress((prev) => (prev < 100 ? prev + increment : 100));

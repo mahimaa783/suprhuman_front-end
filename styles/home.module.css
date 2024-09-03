@@ -396,21 +396,20 @@
 
 .coinPerTap {
   position: absolute;
-  width: 30px; /* Adjust as needed */
-  height: 40px; /* Adjust as needed */
-  pointer-events: none; /* To prevent further clicks on the coin */
-  animation: fadeOut 0.8s ease-out forwards; /* Add 'forwards' to retain the last keyframe */
+  width: 40px; /* Adjust as needed */
+  height: 50px; /* Adjust as needed */
+  pointer-events: none; /* Prevent further clicks on the coin */
+  animation: moveUpAndFade 0.6s ease-out forwards; /* Faster animation */
   z-index: 1001; /* Ensure it's above other elements */
 }
 
-@keyframes fadeOut {
+@keyframes moveUpAndFade {
   0% {
-    transform: scale(1);
-    opacity: 0.5;
+    transform: translateY(0);
+    opacity: 1;
   }
   100% {
-    transform: scale(1);
-    opacity: 0;
+    transform: translateY(-80px); /* Moves further upwards */
+    opacity: 0; /* Fades out */
   }
 }
-

@@ -1,10 +1,12 @@
 import { useState, useEffect } from 'react';
 import styles from '../styles/home.module.css';
 import Footer from './footer';
+import FirstFifty from './first-fifty'; // Import the FirstFifty component
 
 export default function Home() {
   const [isSettingsOpen, setIsSettingsOpen] = useState(false);
   const [coinPosition, setCoinPosition] = useState(null);
+  const [isFirstFiftyOpen, setIsFirstFiftyOpen] = useState(false); // State to control FirstFifty pop-up
 
   const toggleSettingsModal = () => {
     setIsSettingsOpen(!isSettingsOpen);
@@ -28,6 +30,16 @@ export default function Home() {
       setTimeout(() => setCoinPosition(null), 1000);
     }
   };
+
+  // Simulate a check to see if the user is among the first 50,000 users
+  useEffect(() => {
+    // Replace this with actual logic or API call to determine if the user is among the first 50,000
+    const isFirstFifty = true; // Set to true for testing purposes
+
+    if (isFirstFifty) {
+      setIsFirstFiftyOpen(true); // Open the FirstFifty pop-up if the user is eligible
+    }
+  }, []);
 
   // Add event listener for tap on component mount and remove on unmount
   useEffect(() => {
@@ -169,6 +181,10 @@ export default function Home() {
             </div>
           </div>
         </div>
+      )}
+
+      {isFirstFiftyOpen && (
+        <FirstFifty onClose={() => setIsFirstFiftyOpen(false)} />
       )}
 
       {coinPosition && (

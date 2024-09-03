@@ -7,6 +7,7 @@ import SubscribePage from './youtube';
 import TelegramPage from './telegram';
 import InstagramPage from './instagram';
 import TwitterPage from './twitter';
+import DailyReward from './daily-reward'; // Import the DailyReward component
 
 export default function Earn() {
   const router = useRouter();
@@ -17,6 +18,8 @@ export default function Earn() {
   const [isTelegramOpen, setTelegramOpen] = useState(false);
   const [isInstagramOpen, setInstagramOpen] = useState(false);
   const [isTwitterOpen, setTwitterOpen] = useState(false);
+  const [isDailyRewardOpen, setDailyRewardOpen] = useState(false); // New state for DailyReward popup
+  const [isInviteMoreOpen, setInviteMoreOpen] = useState(false); // New state for Invite More popup
 
   // Close all pop-ups
   const handleClosePopUp = () => {
@@ -25,6 +28,8 @@ export default function Earn() {
     setTelegramOpen(false);
     setInstagramOpen(false);
     setTwitterOpen(false);
+    setDailyRewardOpen(false); // Close DailyReward popup
+    setInviteMoreOpen(false); // Close Invite More popup
   };
 
   // Dummy data for YouTube tasks - Replace with real data from API or database
@@ -88,20 +93,21 @@ export default function Earn() {
           <span className={styles.supr}>SUPR</span> TASKS
         </p>
 
+        {/* Daily Reward Task */}
         <div className={styles.task}>
           <img src="/daily-reward.png" alt="Daily Reward Icon" className={styles.taskIcon} />
-          <span className={styles.taskTitle}>Daily Reward</span>
+          <span className={styles.taskTitle}>DAILY REWARD</span>
           <img
             src="/arrow-orange.png"
             alt="Arrow"
             className={styles.arrowIcon}
-            onClick={() => router.push('/daily-reward')}
+            onClick={() => setDailyRewardOpen(true)} // Open the DailyReward pop-up
           />
         </div>
 
         <div className={styles.task}>
           <img src="/youtube.png" alt="YouTube Icon" className={styles.taskIcon} />
-          <span className={styles.taskTitle}>Subscribe to our YouTube Channel</span>
+          <span className={styles.taskTitle}>SUBSCRIBE TO OUR YOUTUBE CHANNERL</span>
           <img
             src="/arrow-orange.png"
             alt="Arrow"
@@ -112,7 +118,7 @@ export default function Earn() {
 
         <div className={styles.task}>
           <img src="/telegram.png" alt="Telegram Icon" className={styles.taskIcon} />
-          <span className={styles.taskTitle}>Join our Telegram Channel</span>
+          <span className={styles.taskTitle}>JOIN OUR TELEGRAM CHANNEL</span>
           <img
             src="/arrow-orange.png"
             alt="Arrow"
@@ -123,7 +129,7 @@ export default function Earn() {
 
         <div className={styles.task}>
           <img src="/instagram.png" alt="Instagram Icon" className={styles.taskIcon} />
-          <span className={styles.taskTitle}>Follow our Instagram</span>
+          <span className={styles.taskTitle}>FOLLOW OUR INSTAGRAM</span>
           <img
             src="/arrow-orange.png"
             alt="Arrow"
@@ -134,12 +140,24 @@ export default function Earn() {
 
         <div className={styles.task}>
           <img src="/twitter.png" alt="Twitter Icon" className={styles.taskIcon} />
-          <span className={styles.taskTitle}>Follow our X</span>
+          <span className={styles.taskTitle}>FOLLOW OUR X</span>
           <img
             src="/arrow-orange.png"
             alt="Arrow"
             className={styles.arrowIcon}
             onClick={() => setTwitterOpen(true)} // Open the Twitter pop-up
+          />
+        </div>
+
+        {/* New Invite More Task */}
+        <div className={styles.task}>
+          <img src="/invite-more.png" alt="Invite More Icon" className={styles.taskIcon} />
+          <span className={styles.taskTitle}>INVITE MORE <span className={styles.supr}>SUPRHUMANS</span></span>
+          <img
+            src="/arrow-orange.png"
+            alt="Arrow"
+            className={styles.arrowIcon}
+            onClick={() => setInviteMoreOpen(true)} // Open the Invite More pop-up
           />
         </div>
       </div>
@@ -152,6 +170,8 @@ export default function Earn() {
       {isTelegramOpen && <TelegramPage onClose={handleClosePopUp} />}
       {isInstagramOpen && <InstagramPage onClose={handleClosePopUp} />}
       {isTwitterOpen && <TwitterPage onClose={handleClosePopUp} />}
+      {isDailyRewardOpen && <DailyReward onClose={handleClosePopUp} currentDay={1} />} {/* New DailyReward Pop-up */}
+      {isInviteMoreOpen && <InviteMore onClose={handleClosePopUp} />} {/* New InviteMore Pop-up */}
     </div>
   );
 }
